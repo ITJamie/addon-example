@@ -1,0 +1,26 @@
+{
+  "name": "lwrf_handler",
+  "version": "dev",
+  "slug": "lwrf_handler",
+  "description": "LightWaveRF Handler for hassio",
+  "startup": "application",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armhf",
+    "i386"
+  ],
+  "boot": "auto",
+  "options": {
+    "log_level": "info",
+    "seconds_between_quotes": 5
+  },
+  "schema": {
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "seconds_between_quotes": "int(1,120)"
+  },
+  "ports": {
+    "9761/udp": 9761,
+    "8000/tcp": 8000
+  }
+}
